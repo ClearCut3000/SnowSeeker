@@ -11,6 +11,8 @@ struct ResortView: View {
 
   //MARK: - View Properties
   let resort: Resort
+  @Environment(\.horizontalSizeClass) var sizeClass
+  @Environment(\.dynamicTypeSize) var typeSize
 
   //MARK: - View Body
     var body: some View {
@@ -21,8 +23,13 @@ struct ResortView: View {
             .scaledToFit()
 
           HStack {
-            ResortDetailsView(resort: resort)
-            SkiDetailView(resort: resort)
+            if sizeClass == .compact && typeSize > .large {
+              VStack(spacing: 10) { ResortDetailsView(resort: resort) }
+              VStack(spacing: 10) { SkiDetailView(resort: resort) }
+            } else {
+              ResortDetailsView(resort: resort)
+              SkiDetailView(resort: resort)
+            }
           }
           .padding(.vertical)
           .background {

@@ -13,6 +13,8 @@ struct ResortView: View {
   let resort: Resort
   @Environment(\.horizontalSizeClass) var sizeClass
   @Environment(\.dynamicTypeSize) var typeSize
+  @State private var selectedFacility: Facility?
+  @State private var showingFacility = false
 
   //MARK: - View Body
     var body: some View {
@@ -42,14 +44,28 @@ struct ResortView: View {
 
             Text("Facilities")
               .font(.headline)
-            Text(resort.facilities, format: .list(type: .and))
-              .padding(.vertical)
+            HStack {
+              ForEach(resort.faciliryTypes) { facility in
+                Button {
+                  selectedFacility = facility
+                  showingFacility = true
+                } label: {
+                  facility.icon
+                    .font(.title)
+                }
+              }
+            }
           }
           .padding(.horizontal)
         }
       }
       .navigationTitle("\(resort.name), \(resort.country)")
       .navigationBarTitleDisplayMode(.inline)
+      .alert(selectedFacility?.name ?? "More informationn",
+             isPresented: $showingFacility,
+             presenting: selectedFacility) { _ in } message: { facility in
+        Text(facility.description)
+      }
     }
 }
 

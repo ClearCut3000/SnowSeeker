@@ -20,6 +20,10 @@ struct Resort: Identifiable, Codable {
   let runs: Int
   let facilities: [String]
 
+  var faciliryTypes: [Facility] {
+    facilities.map(Facility.init)
+  }
+
   static let alllResorts: [Resort] = Bundle.main.decode("resorts.json")
 
   static let example = alllResorts[0]

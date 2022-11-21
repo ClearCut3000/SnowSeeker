@@ -19,6 +19,7 @@
 		3611AD93292BAE96004C2126 /* ResortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3611AD92292BAE96004C2126 /* ResortView.swift */; };
 		3611AD95292BB4C3004C2126 /* SkiDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3611AD94292BB4C3004C2126 /* SkiDetailView.swift */; };
 		3611AD97292BB5C6004C2126 /* ResortDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3611AD96292BB5C6004C2126 /* ResortDetailsView.swift */; };
+		3611AD99292C00C3004C2126 /* Facility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3611AD98292C00C3004C2126 /* Facility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		3611AD92292BAE96004C2126 /* ResortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResortView.swift; sourceTree = "<group>"; };
 		3611AD94292BB4C3004C2126 /* SkiDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiDetailView.swift; sourceTree = "<group>"; };
 		3611AD96292BB5C6004C2126 /* ResortDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResortDetailsView.swift; sourceTree = "<group>"; };
+		3611AD98292C00C3004C2126 /* Facility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				3611AD92292BAE96004C2126 /* ResortView.swift */,
 				3611AD94292BB4C3004C2126 /* SkiDetailView.swift */,
 				3611AD96292BB5C6004C2126 /* ResortDetailsView.swift */,
+				3611AD98292C00C3004C2126 /* Facility.swift */,
 			);
 			path = SnowSeeker;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			files = (
 				3611AD7D292AB98B004C2126 /* ContentView.swift in Sources */,
 				3611AD8F292B8F50004C2126 /* WelcomeView.swift in Sources */,
+				3611AD99292C00C3004C2126 /* Facility.swift in Sources */,
 				3611AD8B292ABB4C004C2126 /* Resort.swift in Sources */,
 				3611AD95292BB4C3004C2126 /* SkiDetailView.swift in Sources */,
 				3611AD93292BAE96004C2126 /* ResortView.swift in Sources */,

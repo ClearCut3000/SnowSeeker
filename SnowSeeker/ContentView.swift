@@ -40,8 +40,11 @@ struct ContentView: View {
         }
       }
       .navigationTitle("Resorts")
+      WelcomeView()
     }
+    .phoneOnlyStackNavigationView()
   }
+
 
   struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

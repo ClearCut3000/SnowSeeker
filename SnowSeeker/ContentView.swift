@@ -18,6 +18,7 @@ struct ContentView: View {
       return resorts.filter { $0.name.localizedCaseInsensitiveContains(searchTaxt) }
     }
   }
+  @StateObject var favorites = Favorites()
 
   //MARK: - View Body
   var body: some View {
@@ -26,23 +27,31 @@ struct ContentView: View {
         NavigationLink {
           ResortView(resort: resort)
         } label: {
-          Image(resort.country)
-            .resizable()
-            .scaledToFill()
-            .frame(width: 40, height: 25)
-            .clipShape(
-              RoundedRectangle(cornerRadius: 5)
-            )
-            .overlay(
-              RoundedRectangle(cornerRadius: 5)
-                .stroke(.black, lineWidth: 1)
-            )
-
-          VStack(alignment: .leading) {
-            Text(resort.name)
-              .font(.headline)
-            Text("\(resort.runs) runs")
-              .foregroundColor(.secondary)
+          HStack {
+            Image(resort.country)
+              .resizable()
+              .scaledToFill()
+              .frame(width: 40, height: 25)
+              .clipShape(
+                RoundedRectangle(cornerRadius: 5)
+              )
+              .overlay(
+                RoundedRectangle(cornerRadius: 5)
+                  .stroke(.black, lineWidth: 1)
+              )
+            
+            VStack(alignment: .leading) {
+              Text(resort.name)
+                .font(.headline)
+              Text("\(resort.runs) runs")
+                .foregroundColor(.secondary)
+            }
+            if favorites.contains(resort) {
+              Spacer()
+              Image(systemName: "heart.fill")
+                .accessibilityLabel("This is a favorite resort.")
+                .foregroundColor(.red)
+            }
           }
         }
       }
@@ -50,6 +59,7 @@ struct ContentView: View {
       .searchable(text: $searchTaxt, prompt: "Search for a resort...")
       WelcomeView()
     }
+    .environmentObject(favorites)
   }
 
 
